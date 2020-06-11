@@ -1,0 +1,57 @@
+<!-- 
+<head>
+    <title>Admin's Login Page</title>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+
+        <div id="login_div" class="loginbox">
+            <form #loginForm="ngForm" (ngSubmit)="login(loginForm)" autocomplete="off">
+            <img alt="BK" src="https://sso.hcmut.edu.vn/cas/images/bk_logo.png" class="avatar">
+                <h1> Login here </h1>
+                <p>Email</p>
+                <input type="text" name="email" placeholder="Enter Email" required autofocus>
+                <p>Password</p>
+                <input type="password" name="password" placeholder="Enter Password" required>
+                <button type="submit" (click)="login()">Log in</button>
+                <a href="#">Change your password?</a>    
+            </form>    
+        </div>
+   
+</body>
+
+</html> -->
+<head>
+  <title>Admin's Login Page</title>
+  <meta charset="UTF-8" />
+</head>
+
+<body>
+    <div id="login_div" class="loginbox">
+    <form #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+
+      <div class="row" *ngIf="authError">
+        <div class="col-12 alert alert-danger">{{ authError?.message }}</div>
+      </div>
+
+      <img alt="BK" src="https://sso.hcmut.edu.vn/cas/images/bk_logo.png" class="avatar">
+        <h1> Login here </h1>
+
+        <label for="email">Email</label>
+        <input ngModel #email="ngModel" name="email" type="email" class="form-control">
+
+        <label for="password">Password</label>
+        <input ngModel #password="ngModel" name="password" type="password" class="form-control">
+
+      <div class="row mt-2">
+        <div class="col-12">
+          <button class="btn btn-primary" type="submit">Login</button>
+        </div>
+        <div class="col-12">
+          <a href="/register">Click here to change password</a>
+        </div>
+      </div>
+    </form>
+</div>
+</body>

@@ -1,0 +1,42 @@
+
+<div class="container-fluid">
+<h1>Study Result</h1>
+  <div *ngFor="let study of study" style="width: 300px;">
+    <!-- <button (click)= "handleData()">Click</button> -->
+    
+    <div *ngIf="study.rate==1">
+      {{handleData()}}
+    </div>
+    <!-- <div>
+      <label>Age: </label> {{study.age}}
+    </div>
+    <div>
+      <label>Rate: </label> {{study.rate}}
+    </div>
+    <div>
+      <label>Active: </label> {{study.active}}
+    </div> -->
+<!--    
+    <span class="button is-small btn-primary" *ngIf='study.active' (click)='updateActive(false)'>Inactive</span>
+   
+    <span class="button is-small btn-primary" *ngIf='!study.active' (click)='updateActive(true)'>Active</span> -->
+   
+    <!-- <span class="button is-small btn-danger" (click)='deleteStudy()'>Delete</span> -->
+    <!-- <hr/> -->
+  </div>
+  <!-- <ng-template #callfunction>
+    {{handleData()}}
+  </ng-template> -->
+  <div style="margin-top:20px;">
+  <button type="button" class="button btn-danger" (click)='deleteStudy()'>Delete All</button>
+  </div>
+</div> 
+
+<div style="display: block">
+  <canvas baseChart
+          [data]="pieChartData"
+          [labels]="pieChartLabels"
+          [chartType]="pieChartType"></canvas>
+</div>
+
+
